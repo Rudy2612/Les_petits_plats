@@ -1,0 +1,32 @@
+.search {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    input {
+        width: calc(100% - 48px);
+        background: #e7e7e7;
+        padding: 24px;
+        border: none;
+        border-radius: 5px;
+
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    span{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &__icon{
+        width: 30px;
+    }
+}
