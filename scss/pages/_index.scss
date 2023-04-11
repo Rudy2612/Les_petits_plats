@@ -1,4 +1,12 @@
-.container{
+.container {
     width: 1240px;
     margin: auto;
+}
+
+.recipe {
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
 }

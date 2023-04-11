@@ -1,0 +1,73 @@
+.recipeCard {
+    &__image {
+        height: 180px;
+        width: 380px;
+        background: #c7bebe;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    &__content {
+        background: #e7e7e7;
+        padding: 0 20px 20px 20px;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            font-family: $font;
+            font-weight: 400;
+            font-size: 18px;
+            color: #000000;
+            
+        }
+
+        p {
+            font-family: $font;
+            font-weight: 700;
+            font-size: 18px;
+            color: #000000;
+        }
+    }
+
+    &__time-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__clock {
+        height: 20px;
+        width: 20px;
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    &__ingredient {
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        margin: 0;
+    }
+
+    &__description {
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: justify;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
