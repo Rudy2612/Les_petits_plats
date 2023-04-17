@@ -2,13 +2,13 @@ export default function recipesFactory(recipes) {
 
     function createCardDOM() {
 
-        let dom = []
+        let dom = [];
 
         if (recipes) {
             recipes.forEach(element => {
 
                 let card = document.createElement('article');
-                card.classList.add('recipeCard')
+                card.classList.add('recipeCard');
 
                 let image = document.createElement('div');
                 image.classList.add('recipeCard__image');
@@ -16,11 +16,11 @@ export default function recipesFactory(recipes) {
 
 
                 let content = document.createElement('div');
-                content.classList.add('recipeCard__content')
+                content.classList.add('recipeCard__content');
                 card.appendChild(content);
 
                 let header = document.createElement('div');
-                header.classList.add('recipeCard__header')
+                header.classList.add('recipeCard__header');
                 content.appendChild(header);
 
                 let name = document.createElement('h2');
@@ -80,10 +80,44 @@ export default function recipesFactory(recipes) {
             return dom;
 
         }
-
     }
 
 
-    return { createCardDOM }
+    function createItemDropdownDOM(ingredients) {
+        let ingredientsArray = document.createDocumentFragment();
+        ingredients.forEach((ingredient) => {
+            let ingredientItem = document.createElement('span');
+            ingredientItem.innerText = ingredient
+            ingredientsArray.append(ingredientItem)
+        })
+
+
+        return ingredientsArray;
+    }
+
+
+    function getAllUstensilesDOM() {
+        let ustensilesCheck = [];
+        let ustensilesArray = document.createDocumentFragment();
+
+        if (recipes) {
+            recipes.forEach(element => {
+                let ustensiles = element.ustensils;
+                ustensiles.forEach((ustensile) => {
+                    if (ustensilesCheck.indexOf(ustensile) === -1) {
+                        let ustensileItem = document.createElement('span');
+                        ustensileItem.innerText = ustensile
+                        ustensilesCheck.push(ustensile)
+                        ustensilesArray.append(ustensileItem)
+                    }
+
+                })
+            })
+        }
+        return ustensilesArray;
+    }
+
+
+    return { createCardDOM, createItemDropdownDOM, getAllUstensilesDOM }
 
 }
