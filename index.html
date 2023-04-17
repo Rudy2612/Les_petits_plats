@@ -31,7 +31,7 @@
 
     <section>
         <form class="search">
-            <input type="text" placeholder="Rechercher une recette">
+            <input type="text" id="input_search" placeholder="Rechercher une recette">
             <span>
                 <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -53,9 +53,7 @@
                         d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                 </svg>
 
-                <div class="dropdown__select bg-blue">
-                    <span>cc</span>
-                </div>
+                <div class="dropdown__select bg-blue" id="ingredients-items"></div>
             </div>
 
 
@@ -68,9 +66,7 @@
                         d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                 </svg>
 
-                <div class="dropdown__select bg-green">
-                    <span>cc</span>
-                </div>
+                <div class="dropdown__select bg-green" id="ingredients-appareils"></div>
             </div>
 
 
@@ -83,9 +79,7 @@
                         d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                 </svg>
 
-                <div class="dropdown__select bg-red">
-                    <span>cc</span>
-                </div>
+                <div class="dropdown__select bg-red" id="ingredients-ustensiles"></div>
             </div>
 
 
@@ -101,7 +95,7 @@
 
 </body>
 
-<script type="text/javascript" src='./data/recipes.js'></script>
+<!-- <script type="text/javascript" src='./data/recipes.js'></script> -->
 <script type="module" src='./scripts/pages/index.js'></script>
 
 </html>
