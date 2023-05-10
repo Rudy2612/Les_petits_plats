@@ -1,6 +1,7 @@
 export default function recipesFactory(recipes) {
 
-    function createCardDOM() {
+
+    function createRecipesCardDOM() {
 
         let dom = [];
 
@@ -83,41 +84,5 @@ export default function recipesFactory(recipes) {
     }
 
 
-    function createItemDropdownDOM(ingredients) {
-        let ingredientsArray = document.createDocumentFragment();
-        ingredients.forEach((ingredient) => {
-            let ingredientItem = document.createElement('span');
-            ingredientItem.innerText = ingredient
-            ingredientsArray.append(ingredientItem)
-        })
-
-
-        return ingredientsArray;
-    }
-
-
-    function getAllUstensilesDOM() {
-        let ustensilesCheck = [];
-        let ustensilesArray = document.createDocumentFragment();
-
-        if (recipes) {
-            recipes.forEach(element => {
-                let ustensiles = element.ustensils;
-                ustensiles.forEach((ustensile) => {
-                    if (ustensilesCheck.indexOf(ustensile) === -1) {
-                        let ustensileItem = document.createElement('span');
-                        ustensileItem.innerText = ustensile
-                        ustensilesCheck.push(ustensile)
-                        ustensilesArray.append(ustensileItem)
-                    }
-
-                })
-            })
-        }
-        return ustensilesArray;
-    }
-
-
-    return { createCardDOM, createItemDropdownDOM, getAllUstensilesDOM }
-
+    return { createRecipesCardDOM }
 }

@@ -1,5 +1,3 @@
-
-
 function getAllIngredients(data) {
     let ingredientsArray = [];
 
@@ -43,5 +41,7 @@ function getAllUstensiles(data) {
 
     return ustensilesArray;
 }
+
+
 
 export { getAllIngredients, getAllAppareils, getAllUstensiles };
