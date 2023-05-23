@@ -1,0 +1,47 @@
+.tag-container {
+    margin-bottom: 20px;
+}
+
+.active_tag {
+    display: inline-block;
+
+    background: red;
+    border-radius: 5px;
+
+    padding: 0px 10px;
+
+    width: auto;
+    margin-right: 10px;
+
+    height: 37px;
+
+    span {
+        font-family: "Lato";
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 37px;
+        color: #ffffff;
+        margin-right: 5px;
+        user-select: none;
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: white;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+}
+
+.ing_tag {
+    background: #3381f7;
+}
+
+.app_tag {
+    background: #68d9a4;
+}
+
+.use_tag {
+    background: #ed6454;
+}

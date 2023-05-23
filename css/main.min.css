@@ -66,15 +66,18 @@ header img {
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 0px 25px;
   width: 150px;
   height: 64px;
-  margin-right: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
   transition: 200ms;
   cursor: pointer;
+}
+.dropdown_wrap {
+  display: flex;
+  gap: 20px;
 }
 .dropdown--active {
   width: 600px;
@@ -162,7 +165,7 @@ header img {
 
 .recipeCard__image {
   height: 180px;
-  width: 380px;
+  width: 100%;
   background: #c7bebe;
   border-radius: 5px 5px 0px 0px;
 }
@@ -221,8 +224,50 @@ header img {
   overflow: hidden;
 }
 
+.tag-container {
+  margin-bottom: 20px;
+}
+
+.active_tag {
+  display: inline-block;
+  background: red;
+  border-radius: 5px;
+  padding: 0px 10px;
+  width: auto;
+  margin-right: 10px;
+  height: 37px;
+}
+.active_tag span {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 37px;
+  color: #ffffff;
+  margin-right: 5px;
+  user-select: none;
+}
+.active_tag svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.ing_tag {
+  background: #3381f7;
+}
+
+.app_tag {
+  background: #68d9a4;
+}
+
+.use_tag {
+  background: #ed6454;
+}
+
 .container {
-  width: 1240px;
+  width: 1440px;
   margin: auto;
 }
 

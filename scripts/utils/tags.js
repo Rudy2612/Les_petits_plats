@@ -1,3 +1,4 @@
+// Fonction : Permet d'obtenir un tableau avec tous les ingredients d'un tableau de recettes
 function getAllIngredients(data) {
     let ingredientsArray = [];
 
@@ -13,6 +14,7 @@ function getAllIngredients(data) {
     return ingredientsArray;
 }
 
+// Fonction : Permet d'obtenir un tableau avec tous les appareils d'un tableau de recettes
 function getAllAppareils(data) {
     let appareilArray = [];
 
@@ -26,6 +28,7 @@ function getAllAppareils(data) {
     return appareilArray;
 }
 
+// Fonction : Permet d'obtenir un tableau avec tous les ustensiles d'un tableau de recettes
 function getAllUstensiles(data) {
     let ustensilesArray = [];
 

@@ -1,21 +1,26 @@
 export default function recipesFactory(recipes) {
 
-
+    // Fonction : Création des cards de recettes.
     function createRecipesCardDOM() {
 
-        let dom = [];
+        var recipesCardList = document.createDocumentFragment();
 
         if (recipes) {
+            // On parcours toutes les recettes
             recipes.forEach(element => {
 
+                // Création de la carte
                 let card = document.createElement('article');
                 card.classList.add('recipeCard');
 
+
+                // Création de l'image de la recette
                 let image = document.createElement('div');
                 image.classList.add('recipeCard__image');
                 card.appendChild(image);
 
 
+                // Création du bloc d'information
                 let content = document.createElement('div');
                 content.classList.add('recipeCard__content');
                 card.appendChild(content);
@@ -43,6 +48,7 @@ export default function recipesFactory(recipes) {
                 timeContainer.appendChild(time);
 
 
+                // Creation des ingrédients et explication de la recette
                 let wrap = document.createElement('div');
                 wrap.classList.add('recipeCard__wrap');
                 content.appendChild(wrap);
@@ -51,19 +57,25 @@ export default function recipesFactory(recipes) {
                 wrap.appendChild(ingredientContainer);
 
                 if (element.ingredients) {
+                    // On parcours tous les ingredients
                     element.ingredients.forEach((e) => {
                         let ingredientLine = document.createElement('p');
                         ingredientLine.classList.add('recipeCard__ingredient');
 
-
                         let ingredient = document.createElement('b');
-                        ingredient.innerText = e.ingredient + ': ';
-                        ingredientLine.appendChild(ingredient);
-
                         let unite = document.createElement('span');
-                        unite.innerText = String(e.quantity) + (e.unit ? " " + e.unit : "");
-                        ingredientLine.appendChild(unite)
 
+                        // S'il y a une quantité aux ingredients, on met le nom, la quantité et l'unité, sinon que le nom
+                        if (e.quantity) {
+                            ingredient.innerText = e.ingredient + ': ';
+                            ingredientLine.appendChild(ingredient);
+                            unite.innerText = String(e.quantity) + (e.unit ? " " + e.unit : "");
+                            ingredientLine.appendChild(unite)
+                        }
+                        else {
+                            ingredient.innerText = e.ingredient;
+                            ingredientLine.appendChild(ingredient);
+                        }
 
                         ingredientContainer.appendChild(ingredientLine);
                     })
@@ -74,11 +86,11 @@ export default function recipesFactory(recipes) {
                 description.classList.add('recipeCard__description');
                 wrap.appendChild(description);
 
-                dom.push(card)
+                // Ajout de la carte à la liste de carte à retourner
+                recipesCardList.append(card)
             });
 
-
-            return dom;
+            return recipesCardList;
 
         }
     }
