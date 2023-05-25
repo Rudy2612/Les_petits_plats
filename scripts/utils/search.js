@@ -1,39 +1,38 @@
 function search(recherche, data) {
 
-    // Variable de stockage des resultat
-    let recipeFiltered = [];
+    let recipeFiltered = []
 
     // Si la recherche textuel est suffisament longue, on execute la recherche
     if (recherche.length >= 3) {
 
-        // Boucle pour toutes les recettes
-        for (var i = 0; i < data.length; i++) {
+        // On parcours toutes les recettes
+        data.forEach(recipe => {
 
-            let recipe = data[i];
             var isMatchText = false;
+
+            // -> Filtrage input (nom, description et ingrédients)
+            let terms = recherche.toLowerCase();
 
             let name = recipe.name.toLowerCase();
             let description = recipe.description.toLowerCase();
             let ingredients = recipe.ingredients;
-            let terms = recherche.toLowerCase();
+
 
             // Si la recherche est incluse dans le nom ou la description => valide la condition
             if (name.includes(terms) || description.includes(terms))
                 isMatchText = true;
 
+
             // Si la recherche correspond à un ingredient => valide la condition
-            for (var ig = 0; ig < ingredients.length; ig++) {
-                if (ingredients[ig].ingredient.toLowerCase().includes(terms))
-                    isMatchText = true;
-            }
+            if (ingredients.filter(item => item.ingredient.includes(terms)).length >= 1)
+                isMatchText = true;
+
 
             // Si la recette correspond à la recherche => Ajout à la variable retournée
-            if (isMatchText === true) {
+            if (isMatchText)
                 recipeFiltered.push(recipe)
-            }
 
-        }
-
+        });
     }
     else {
         // Si la recherche fait moins de 3 caractères, on retourne toutes les recettes en paramètre
