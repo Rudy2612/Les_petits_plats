@@ -9,4 +9,9 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 50px;
     }
+    &__error {
+        font-family: $font;
+        font-size: 16px;
+        text-align: center;
+    }
 }
