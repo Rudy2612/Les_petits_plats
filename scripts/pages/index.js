@@ -30,14 +30,16 @@ let recipes_wrap = document.getElementById('recipe-wrap');
 let ingredientsItems = document.getElementById('ingredients-items');
 let appareilsItems = document.getElementById('appareils-items');
 let ustensilesItems = document.getElementById('ustensiles-items');
+let errorSearch = document.getElementById('error-search')
 
 
 // Fonction : Affichage des recettes dans le DOM
 function displayRecipes(recipes) {
-    if (recipes) {
+    if (recipes.length >= 1) {
         // Création des vignettes via la factory Model
         let RecipesDOM = recipesFactory(recipes).createRecipesCardDOM();
         recipes_wrap.innerHTML = "";
+        errorSearch.innerText = ""
         console.log(RecipesDOM)
         recipes_wrap.append(RecipesDOM)
         // RecipesDOM.forEach((element) => { recipes_wrap.append(element); })
@@ -47,6 +49,11 @@ function displayRecipes(recipes) {
 
         // Affichage des tags selectionné dans le filtre
         displayTagActive();
+    }
+    else {
+        recipes_wrap.innerHTML = "";
+        errorSearch.innerText = `Aucune recette ne contient '${text}’ vous pouvez chercher « tarte aux pommes », « poisson », etc..`
+
     }
 }
 
@@ -183,9 +190,9 @@ function init() {
     // Init : EventListener ouverture des dropdowns
     dropdowns.forEach((drp) => {
         drp.addEventListener('click', (e) => {
-
             drp.classList.toggle('dropdown--active');
 
+            console.log(document.getElementsByClassName('bg-red')[0].classList)
             // Obtenir le focus sur l'input à l'interrieur des dropdowns
             drp.getElementsByTagName('input')[0].focus();
         });
