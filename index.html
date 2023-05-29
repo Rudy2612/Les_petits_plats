@@ -16,7 +16,7 @@
 
     <!-- Informations onglet  -->
     <title>Les petits plats</title>
-    <link rel="icon" type="image/png" href="./assets/toque.svg" />
+    <link rel="icon" type="image/png" href="./assets/toque.svg">
 
 </head>
 
@@ -29,7 +29,7 @@
     </header>
 
 
-    <section>
+    <div>
         <form class="search">
             <input type="text" id="input_search" placeholder="Rechercher une recette">
             <span>
@@ -87,17 +87,15 @@
 
         </div>
 
-    </section>
+    </div>
 
-    <section class="recipe__wrap" id="recipe-wrap">
-    </section>
+    <div class="recipe__wrap" id="recipe-wrap"></div>
 
     <p class="recipe__error" id="error-search">La recherche est cassé</p>
 
 
-</body>
 
-<!-- <script type="text/javascript" src='./data/recipes.js'></script> -->
-<script type="module" src='./scripts/pages/index.js'></script>
+    <script src='scripts/pages/index.js' type="module"></script>
+</body>
 
 </html>
